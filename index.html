@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reel Video Resizer – Free 9:16 Reel Converter Online</title>
+
+<meta name="description" content="Free online Reel Video Resizer tool to convert any video into perfect 9:16 vertical format. Supports Fit, Fill, Space, and Blur modes. No upload required. 100% browser-based.">
+
+<meta name="keywords" content="reel video resizer, 9:16 video converter, instagram reel resizer, youtube shorts converter, vertical video editor online">
+
+<meta name="author" content="Reel Video Resizer">
+
+<meta property="og:title" content="Reel Video Resizer – Free 9:16 Converter">
+<meta property="og:description" content="Convert any video into 9:16 vertical format instantly. Free browser-based Reel converter with blur and fit modes.">
+<meta property="og:type" content="website">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00c853">
+
+<!-- Styles -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Reel Video Resizer",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Web Browser",
+  "description": "Free online tool to convert any video into perfect 9:16 vertical reel format with Fit, Fill, Space, and Blur modes.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+</head>
+<body>
+
+<header>
+  <h1>Reel Video Resizer</h1>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- Overlay -->
+<div id="menuOverlay" class="menu-overlay" onclick="closeMenu()"></div>
+
+<!-- Side Navigation -->
+<div id="sideMenu" class="side-menu">
+
+  <div class="side-menu-header">
+    <span class="close-btn" onclick="closeMenu()">✕</span>
+  </div>
+
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy</a>
+
+</div>
+
+
+
+<div class="container">
+
+<div id="exportOverlay"></div>
+
+<input type="file" id="videoInput" accept="video/*"><br>
+
+<div id="modeButtons">
+  <button onclick="setMode('fit')" id="fitBtn" class="active">Fit</button>
+  <button onclick="setMode('fill')" id="fillBtn">Fill</button>
+  <button onclick="setMode('space')" id="spaceBtn">Space</button>
+  <button onclick="setMode('blur')" id="blurBtn">Blur</button>
+</div>
+
+<div id="spaceOptions" class="option-section" style="display:none;">
+  <label>Background Color:</label>
+  <input type="color" id="bgColor" value="#000000">
+</div>
+
+<div id="blurOptions" class="option-section" style="display:none;">
+  <label>Blur Intensity:</label>
+  <input type="range" id="blurRange" min="0" max="50" value="35">
+  <span id="blurValue">35px</span>
+</div>
+
+<div class="timeline-container">
+  <button onclick="togglePlay()" id="playBtn">▶ Play</button>
+  <input type="range" id="timeline" min="0" value="0" step="0.01">
+  <span id="timeDisplay">0:00 / 0:00</span>
+</div>
+
+<canvas id="canvas" width="1080" height="1920"></canvas><br>
+
+<button id="downloadBtn" onclick="downloadVideo()">Download Reel</button>
+
+<div class="progress-container" id="progressContainer">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<p id="progressText" style="display:none;">Exporting... 0%</p>
+
+</div>
+
+<footer>
+  © 2026 Reel Video Resizer
+</footer>
+
+<!-- Main JS -->
+<script src="script.js"></script>
+
+<!-- Service Worker Registration -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log("Service Worker Registered"));
+}
+</script>
+
+</body>
+</html>

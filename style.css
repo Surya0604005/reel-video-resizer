@@ -1,0 +1,228 @@
+/* =============================
+   GLOBAL LAYOUT (Sticky Footer)
+============================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+header {
+  background: #000;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.container {
+  padding: 20px;
+  position: relative;
+  flex: 1; /* THIS FIXES FOOTER ISSUE */
+}
+
+/* =============================
+   BUTTONS
+============================= */
+
+button {
+  padding: 10px 18px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #ff004f;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button.active {
+  background: #00c853;
+}
+
+/* =============================
+   EDITOR SECTION
+============================= */
+
+canvas {
+  margin-top: 20px;
+  width: 270px;
+  height: 480px;
+  background: black;
+  border-radius: 10px;
+}
+
+.timeline-container {
+  margin-top: 15px;
+}
+
+#timeline {
+  width: 60%;
+  margin: 0 10px;
+}
+
+.option-section {
+  margin-top: 10px;
+}
+
+.progress-container {
+  width: 60%;
+  height: 10px;
+  background: #333;
+  margin: 10px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #00c853;
+}
+
+/* Overlay during export */
+#exportOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 10;
+}
+
+/* =============================
+   STATIC PAGES
+============================= */
+
+.page-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  flex: 1;
+}
+
+.page-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #00c853;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.card p {
+  margin-bottom: 15px;
+}
+
+.contact-email {
+  font-weight: bold;
+  color: #00c853;
+}
+
+/* =============================
+   FOOTER
+============================= */
+
+footer {
+  padding: 20px;
+  background: #000;
+  font-size: 14px;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu a {
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-bottom: 1px solid #333;
+}
+
+.side-menu a:hover {
+  background: #00c853;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.side-menu-header {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.close-btn {
+  font-size: 22px;
+  cursor: pointer;
+  color: white;
+}
+
+.close-btn:hover {
+  color: #00c853;
+}
+
+/* Background Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 900;
+}
+
+/* When active */
+.menu-overlay.active {
+  display: block;
+}
